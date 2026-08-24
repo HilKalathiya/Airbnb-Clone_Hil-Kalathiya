@@ -1,5 +1,7 @@
 # Production-Scale Vacation Rental Marketplace Architecture
 
+![Architecture Diagram](./airbnb-architecture.svg)
+
 This document outlines the high-level architecture and scaling strategy for a global vacation-rental marketplace (analogous to Airbnb). It is designed to handle millions of concurrent users, massive global media delivery, high-throughput search queries, and secure, transactional bookings.
 
 ## 1. High-Level Architecture Diagram
