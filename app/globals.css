@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   GLOBAL STYLES — Airbnb Clone
+   Desktop-only implementation
+   ============================================================ */
+
+@font-face {
+  font-family: "Airbnb Cereal VF";
+  src: url("/fonts/AirbnbCerealVF.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+/* --- Base reset and typography --- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-text-primary font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+    /* Prevent horizontal overflow on desktop */
+    overflow-x: hidden;
+  }
+
+  /* Normalize heading weights */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Scroll lock utility applied by JS when modals are open */
+  body.scroll-locked {
+    overflow: hidden;
+  }
+}
+
+/* --- Component utilities --- */
+@layer components {
+  /* Page content container */
+  .page-container {
+    @apply max-w-content mx-auto px-10;
+  }
+
+  /* Primary action button (Reserve) */
+  .btn-primary {
+    @apply bg-brand hover:bg-brand-hover text-white font-semibold rounded-full
+           transition-colors duration-200 focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply bg-white hover:bg-surface-muted text-text-primary font-medium
+           border border-border-default rounded-sm transition-colors duration-200
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-text-primary focus-visible:ring-offset-2;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-border-default my-10;
+  }
+
+  /* Visually hidden (for screen readers only) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* --- Scrollbar styling for Photo Tour --- */
+.photo-tour-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.photo-tour-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.photo-tour-scroll::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 2px;
+}
